@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tolibjon Shuhratov — Full-Stack Developer</title>
-<meta name="description" content="Tolibjon Shuhratov — Full-stack developer portfolio">
+<title>Contact — Tolibjon Shuhratov</title>
 
 <link rel="icon" href="./images/Main logo T-F-dev 2.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +15,7 @@
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/navbar.css">
 <link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
 
@@ -24,71 +23,64 @@
 <header class="nav" id="siteNav">
   <div class="nav__inner">
     <a href="index.html" class="nav__logo">
-      <!-- LOGOINGIZNI SHU YERGA QO'YING (masalan: assets/logo.png) -->
       <img src="./images/Main logo T-F-dev 2.jpg" alt="Logo" onerror="this.style.display='none'">
-     
     </a>
-
     <nav class="nav__links" id="navLinks">
-      <a href="index.html" class="nav__link is-active">Home</a>
+      <a href="index.html" class="nav__link">Home</a>
       <a href="about.html" class="nav__link">About</a>
       <a href="projects.html" class="nav__link">Projects</a>
-      <a href="contact.html" class="nav__link">Contact</a>
+      <a href="contact.html" class="nav__link is-active">Contact</a>
     </nav>
-
     <button class="nav__burger" id="navBurger" aria-label="Menyuni ochish" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="hero__halftone"></div>
-  <div class="container hero__grid">
-
-    <div class="hero__portrait">
-      <div class="panel">
-        <!-- RASMINGIZNI SHU YERGA QO'YING (masalan: assets/profile.jpg) -->
-        <img src="./images/T.png" alt="Tolibjon Shuhratov" onerror="this.style.opacity='0'">
-      </div>
-    </div>
-
-    <div class="hero__text">
-      <p class="eyebrow hero__eyebrow">Home</p>
-      <h1 class="hero__name">Tolibjon <span>Shuhratov</span></h1>
-      <p class="hero__role">Full-Stack Developer</p>
-      <p class="hero__desc">
-        Aniq g'oyadan haqiqiy brandgacha..
-      </p>
-
-      <div class="hero__cta">
-        <a href="projects.html" class="btn btn--blue">Loyihalarni ko'rish</a>
-        <a href="contact.html" class="btn btn--ghost">Bog'lanish</a>
-      </div>
-
-      <div class="hero__socials">
-        <a href="https://t.me/tolibjon_developer" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
-        <a href="https://instagram.com/tolibjon_shuhratov" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.youtube.com/channel/UCIuuOEX1LmV-xIZkvryFAFQ" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="https://github.com/Tolibjonshurhatov" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/tolibjon-shuhratov-9ba1553ba/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      </div>
-    </div>
-  </div>
+<!-- ============ CONTACT HERO ============ -->
+<section class="contact-hero container">
+  <p class="eyebrow">Contact</p>
+  <h1 class="contact-hero__title">Contact</h1>
+  <p class="contact-hero__lead">
+    Xabaringiz to'g'ridan-to'g'ri menga yetib boradi.
+  </p>
 </section>
 
-<!-- ============ PROJECTS PREVIEW ============ -->
-<section class="preview container">
-  <div class="preview__head">
-    <div>
-      <p class="eyebrow">Projects</p>
-      <h2 class="preview__title">Tanlangan loyihalar</h2>
+<!-- ============ CONTACT CONTENT ============ -->
+<section class="container contact-layout">
+
+  <div class="contact-info">
+    <div class="contact-info__item">
+      <p class="contact-info__label">Telegram</p>
+      <p class="contact-info__value"><a href="https://t.me/tolibjon_developer" target="_blank" rel="noopener">Tolibjon Shuhratov</a></p>
     </div>
-    <a href="projects.html" class="btn btn--ghost">Barchasini ko'rish →</a>
+    <div class="contact-info__item">
+      <p class="contact-info__label">GitHub</p>
+      <p class="contact-info__value"><a href="https://github.com/Tolibjonshurhatov" target="_blank" rel="noopener">Tolibjon Shuhratov</a></p>
+    </div>
+    <div class="contact-info__item">
+      <p class="contact-info__label">LinkedIn</p>
+      <p class="contact-info__value"><a href="https://www.linkedin.com/in/tolibjon-shuhratov-9ba1553ba/" target="_blank" rel="noopener">Tolibjon Shuhratov</a></p>
+    </div>
   </div>
-  <p style="max-width:60ch;color:var(--ink-soft)">
-Mening loyihalarimni bir qismi shu yerda ➡️  </p>
+
+  <form class="contact-form panel" id="contactForm" autocomplete="off">
+    <div class="field">
+      <label for="name">Ismingiz</label>
+      <input type="text" id="name" name="name" placeholder="Ismingiz" required>
+    </div>
+    <div class="field">
+      <label for="contact">Telegram username yoki email</label>
+      <input type="text" id="contact" name="contact" placeholder="@username yoki email@mail.com" required>
+    </div>
+    <div class="field">
+      <label for="message">Xabar</label>
+      <textarea id="message" name="message" placeholder="Xabaringizni yozing..." required></textarea>
+    </div>
+    <button type="submit" class="btn btn--blue contact-form__submit" id="submitBtn">Xabar yuborish</button>
+    <p class="form-status" id="formStatus"></p>
+  </form>
+
 </section>
 
 <!-- ============ FOOTER ============ -->
@@ -96,12 +88,10 @@ Mening loyihalarimni bir qismi shu yerda ➡️  </p>
   <div class="container footer__inner">
     <div class="footer__brand">
       <div class="footer__logo">
-        <!-- LOGOINGIZNI SHU YERGA HAM QO'YING -->
         <img src="./images/Main logo T-F-dev 2.jpg" alt="Logo" onerror="this.style.display='none'">
       </div>
-      <p class="footer__tag">Full-Stack Developer. G'oyalarni - ishlaydigan mahsulotga aylantiraman.</p>
+      <p class="footer__tag">Full-Stack Developer. G'oyalarni ishlaydigan mahsulotga aylantiraman.</p>
     </div>
-
     <div class="footer__col">
       <p class="footer__col-title">Sahifalar</p>
       <a class="footer__link" href="index.html">Home</a>
@@ -126,5 +116,6 @@ Mening loyihalarimni bir qismi shu yerda ➡️  </p>
 </footer>
 
 <script src="js/navbar.js"></script>
+<script src="js/contact.js"></script>
 </body>
 </html>

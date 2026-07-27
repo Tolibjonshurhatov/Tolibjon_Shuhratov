@@ -1,0 +1,139 @@
+/* =========================================================
+   about.css
+   ========================================================= */
+
+.about-hero{
+  padding-top:calc(var(--nav-h) + var(--gap-lg));
+  padding-bottom:var(--gap-lg);
+  border-bottom:2.5px solid var(--line-strong);
+}
+.about-hero__title{
+  font-size:clamp(2.4rem, 6vw, 4.2rem);
+  text-transform:uppercase;
+  margin-top:var(--gap-xs);
+}
+.about-hero__lead{
+  max-width:56ch;
+  margin-top:var(--gap-sm);
+  color:var(--ink-soft);
+  font-size:1.05rem;
+}
+
+.about-layout{
+  display:grid;
+  grid-template-columns:1.15fr .5fr;
+  gap:var(--gap-xl);
+  align-items:start;
+  padding-block:var(--gap-xl);
+}
+
+/* --- Chap ustun: scroll bo'ladigan matn bloklari --- */
+.about-block{
+  padding-block:var(--gap-lg);
+  border-top:1px solid var(--line);
+}
+.about-block:first-child{ border-top:none; padding-top:0; }
+.about-block__num{
+  font-family:var(--font-mono);
+  font-size:.8rem;
+  color:var(--blue);
+  letter-spacing:.1em;
+}
+.about-block h3{
+  font-size:clamp(1.5rem, 3vw, 2rem);
+  text-transform:uppercase;
+  margin-top:.4rem;
+}
+.about-block p{
+  margin-top:var(--gap-sm);
+  max-width:62ch;
+  color:var(--ink-soft);
+}
+.about-block ul{
+  margin-top:var(--gap-sm);
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem;
+}
+.about-block li{
+  font-family:var(--font-mono);
+  font-size:.78rem;
+  padding:.45rem .8rem;
+  border:1.5px solid var(--line-strong);
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+
+/* --- O'ng ustun: sticky (scroll qilinmaydigan) panel --- */
+.about-side{
+  position:sticky;
+  top:calc(var(--nav-h) + var(--gap-md));
+  display:flex;
+  flex-direction:column;
+  gap:var(--gap-md);
+}
+
+/* Yil ko'rsatkichi — scroll paytida 2025 -> 2026 almashadi */
+.year-stamp{
+  position:relative;
+  padding:var(--gap-md) var(--gap-sm);
+  border:2.5px solid var(--line-strong);
+  text-align:center;
+  overflow:hidden;
+  background:var(--paper);
+}
+.year-stamp__label{
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.year-stamp__value{
+  margin-top:.4rem;
+  font-family:var(--font-display);
+  font-size:clamp(2.6rem, 4vw, 3.4rem);
+  color:var(--ink);
+  transition:opacity .3s var(--ease), transform .3s var(--ease);
+}
+.year-stamp__value.is-swapping{
+  opacity:0;
+  transform:translateY(10px);
+}
+
+/* Telegram taklif qutisi — sahifa scroll bo'lsa ham shu yerda turadi */
+.follow-box{
+  padding:var(--gap-md);
+  border:2.5px solid var(--line-strong);
+  background:var(--blue-mist);
+}
+.follow-box p{
+  font-size:.98rem;
+  line-height:1.7;
+}
+.follow-box__link{
+  color:var(--blue);
+  font-weight:600;
+  border-bottom:2px solid var(--blue);
+  transition:color .2s var(--ease), border-color .2s var(--ease);
+}
+.follow-box__link:hover{ color:var(--blue-deep); border-color:var(--blue-deep); }
+
+.devmaster {
+  font-size: larger;
+  color: black;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.devmaster:hover {
+  color:blue ;
+}
+
+@media (max-width:900px){
+  .about-layout{ grid-template-columns:1fr; }
+  .about-side{
+    position:static;
+    flex-direction:row;
+    flex-wrap:wrap;
+  }
+  .year-stamp, .follow-box{ flex:1 1 240px; }
+}

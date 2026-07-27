@@ -1,0 +1,147 @@
+/* =========================================================
+   navbar.css — yuqorida to'liq, scrollda blur bo'ladigan navbar
+   ========================================================= */
+
+.nav{
+  position:fixed;
+  inset-inline:0;
+  top:0;
+  z-index:1000;
+  height:var(--nav-h);
+  display:flex;
+  align-items:center;
+  background:var(--white);
+  border-bottom:2px solid transparent;
+  transition:height .35s var(--ease), background .35s var(--ease),
+             border-color .35s var(--ease), box-shadow .35s var(--ease);
+}
+
+/* Scroll bo'lganda: kichraydi + blur + soya + chegara chiqadi */
+.nav.is-scrolled{
+  height:var(--nav-h-scrolled);
+  background:rgba(255,255,255,.7);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  backdrop-filter:blur(14px) saturate(140%);
+  border-color:var(--line);
+  box-shadow:0 12px 30px -20px rgba(12,12,14,.35);
+}
+
+.nav__inner{
+  width:100%;
+  max-width:1180px;
+  margin-inline:auto;
+  padding-inline:clamp(1.25rem, 4vw, 3rem);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--gap-md);
+}
+
+/* --- Logo joyi: rasmni o'zingiz src="" ichiga qo'yasiz --- */
+.nav__logo{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  font-family:var(--font-display);
+  font-size:1.1rem;
+  letter-spacing:.02em;
+  flex-shrink:0;
+}
+.nav__logo img{
+  height:50px;
+  width:50px;
+  object-fit:contain;
+  transition:height .35s var(--ease);
+  border-radius: 20%;
+}
+.nav.is-scrolled .nav__logo img{ height:39px;border-radius: 20%; }
+
+/* --- Asosiy menyu --- */
+.nav__links{
+  display:flex;
+  align-items:center;
+  gap:clamp(1.2rem, 3vw, 2.6rem);
+}
+.nav__link{
+  position:relative;
+  font-family:var(--font-mono);
+  font-size:.82rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  padding-block:.4rem;
+  transition:color .2s var(--ease);
+}
+.nav__link::after{
+  content:"";
+  position:absolute;
+  left:0; right:100%;
+  bottom:0;
+  height:2px;
+  background:var(--blue);
+  transition:right .28s var(--ease);
+}
+.nav__link:hover,
+.nav__link.is-active{ color:var(--ink); }
+.nav__link:hover::after,
+.nav__link.is-active::after{ right:0; }
+
+/* --- Burger (mobil) --- */
+.nav__burger{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  width:40px;
+  height:40px;
+  border:2px solid var(--ink);
+  background:var(--white);
+  padding:0;
+}
+.nav__burger span{
+  display:block;
+  width:18px;
+  height:2px;
+  margin-inline:auto;
+  background:var(--ink);
+  transition:transform .3s var(--ease), opacity .3s var(--ease), background .3s var(--ease);
+}
+.nav__burger.is-open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.nav__burger.is-open span:nth-child(2){ opacity:0; }
+.nav__burger.is-open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+.nav__burger.is-open{ background:var(--blue-mist); border-color:var(--blue); }
+.nav__burger.is-open span{ background:var(--blue); }
+
+@media (max-width:860px){
+  .nav__links{
+    position:fixed;
+    top:var(--nav-h-scrolled);
+    left:0; right:0;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0;
+    background:rgba(255,255,255,.92);
+    -webkit-backdrop-filter:blur(16px);
+    backdrop-filter:blur(16px);
+    border-bottom:2px solid var(--line-strong);
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:max-height .4s var(--ease), opacity .3s var(--ease);
+  }
+  .nav__links.is-open{
+    max-height:400px;
+    opacity:1;
+  }
+  .nav__link{
+    width:100%;
+    padding:1.1rem clamp(1.25rem,4vw,3rem);
+    border-bottom:1px solid var(--line);
+    /* Bosilganda ko'k rangda "belgilanib qolmasligi" uchun: */
+    -webkit-tap-highlight-color:transparent;
+  }
+  .nav__link::after{ display:none; }
+  .nav__link:active,
+  .nav__link:hover{ background:var(--blue-mist); color:var(--blue); }
+  .nav__burger{ display:flex; }
+}

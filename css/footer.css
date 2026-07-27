@@ -1,0 +1,83 @@
+/* =========================================================
+   footer.css
+   ========================================================= */
+
+.footer{
+  border-top:2.5px solid var(--line-strong);
+  background:var(--footer-bg);
+  color:var(--footer-text);
+  padding-block:var(--gap-lg) var(--gap-md);
+}
+.footer__inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:var(--gap-lg);
+  flex-wrap:wrap;
+}
+.footer__brand{
+  display:flex;
+  flex-direction:column;
+  gap:var(--gap-sm);
+  max-width:320px;
+}
+.footer__logo{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  font-family:var(--font-display);
+  font-size:1.3rem;
+  color:var(--footer-text);
+}
+/* Logotip odatda qora chizilgan bo'ladi — qora fonda ko'rinishi
+   uchun avtomatik oqartiriladi. Agar logoyingiz allaqachon oq/rangli
+   bo'lsa, shu qatorni o'chirib qo'yishingiz mumkin. */
+.footer__logo img{ height:50px; width:50px; object-fit:contain; filter:invert(1) brightness(1.4);border-radius: 20%; }
+.footer__tag{
+  color:var(--footer-text-soft);
+  font-size:.92rem;
+}
+
+/* Menyu va Socials — bir xil ustunma-ustun (vertikal) uslubda */
+.footer__col{
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+}
+.footer__col-title{
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--white);
+  margin-bottom:.2rem;
+}
+.footer__link{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  font-family:var(--font-mono);
+  font-size:.85rem;
+  color:var(--white);
+  transition:color .2s var(--ease), transform .2s var(--ease);
+}
+.footer__link i{ width:18px; text-align:center; flex-shrink:0; color:var(--white); }
+.footer__link:hover{ color:var(--white); transform:translateX(4px); }
+
+.footer__bottom{
+  margin-top:var(--gap-lg);
+  padding-top:var(--gap-sm);
+  border-top:1px solid var(--footer-line);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:.5rem;
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.05em;
+  color:var(--footer-text-soft);
+}
+
+@media (max-width:600px){
+  .footer__inner{ flex-direction:column; gap:var(--gap-md); }
+}

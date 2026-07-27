@@ -1,0 +1,41 @@
+/* =========================================================
+   TOLIBJON SHUHRATOV — PORTFOLIO
+   variables.css — design tokens (rang, shrift, bo'shliq)
+   ========================================================= */
+
+:root{
+  /* --- Ranglar (haqiqiy oq/qora, ozgina kok) --- */
+  --white:        #ffffff;
+  --paper:        #ffffff;   /* haqiqiy oq — panellar ham shu fonda */
+  --ink:          #000000;   /* asosiy qora matn — toza qora */
+  --ink-soft:     #2a2a2e;   /* ikkinchi darajali matn — baribir to'q */
+  --line:         #e6e6ea;   /* nozik chiziqlar */
+  --line-strong:  #000000;   /* qalin manga panel chegarasi */
+  --blue:         #123bff;   /* signature kok rang */
+  --blue-deep:    #0026c7;
+  --blue-mist:    #eef1ff;   /* juda ochiq kok fon */
+
+  /* --- Qora footer uchun alohida palitra --- */
+  --footer-bg:      #000000;
+  --footer-text:    #f2f2f4;
+  --footer-text-soft:#9a9aa2;
+  --footer-line:    #232327;
+
+  /* --- Shriftlar --- */
+  --font-display: 'Anton', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+
+  /* --- Bo'shliqlar --- */
+  --gap-xs: .5rem;
+  --gap-sm: 1rem;
+  --gap-md: 2rem;
+  --gap-lg: 4rem;
+  --gap-xl: 8rem;
+
+  /* --- Boshqa --- */
+  --radius: 2px;
+  --nav-h: 84px;
+  --nav-h-scrolled: 62px;
+  --ease: cubic-bezier(.65,0,.35,1);
+}

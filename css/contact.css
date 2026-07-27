@@ -1,0 +1,104 @@
+/* =========================================================
+   contact.css
+   ========================================================= */
+
+.contact-hero{
+  padding-top:calc(var(--nav-h) + var(--gap-lg));
+  padding-bottom:var(--gap-lg);
+  border-bottom:2.5px solid var(--line-strong);
+}
+.contact-hero__title{
+  font-size:clamp(2.4rem, 6vw, 4.2rem);
+  text-transform:uppercase;
+  margin-top:var(--gap-xs);
+}
+.contact-hero__lead{
+  max-width:56ch;
+  margin-top:var(--gap-sm);
+  color:var(--ink-soft);
+}
+
+.contact-layout{
+  padding-block:var(--gap-xl);
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  gap:var(--gap-lg);
+  align-items:start;
+}
+
+.contact-info{
+  display:flex;
+  flex-direction:column;
+  gap:var(--gap-md);
+}
+.contact-info__item{
+  padding-block:var(--gap-sm);
+  border-top:1px solid var(--line);
+}
+.contact-info__item:first-child{ border-top:none; padding-top:0; }
+.contact-info__label{
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--blue);
+}
+.contact-info__value{
+  margin-top:.4rem;
+  font-size:1.05rem;
+}
+
+/* --- Forma --- */
+.contact-form{
+  padding:var(--gap-md);
+  display:flex;
+  flex-direction:column;
+  gap:var(--gap-sm);
+}
+.field{ display:flex; flex-direction:column; gap:.4rem; }
+.field label{
+  font-family:var(--font-mono);
+  font-size:.75rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.field input,
+.field textarea{
+  font-family:var(--font-body);
+  font-size:1rem;
+  padding:.85rem 1rem;
+  border:2px solid var(--line-strong);
+  background:var(--white);
+  color:var(--ink);
+  transition:border-color .2s var(--ease), box-shadow .2s var(--ease);
+}
+.field textarea{ resize:vertical; min-height:130px; }
+.field input:focus,
+.field textarea:focus{
+  outline:none;
+  border-color:var(--blue);
+  box-shadow:0 0 0 4px var(--blue-mist);
+}
+
+.contact-form__submit{
+  margin-top:.4rem;
+  justify-content:center;
+}
+.contact-form__submit:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+  transform:none;
+}
+
+.form-status{
+  font-family:var(--font-mono);
+  font-size:.85rem;
+  min-height:1.2em;
+}
+.form-status.is-success{ color:var(--blue); }
+.form-status.is-error{ color:#c62828; }
+
+@media (max-width:860px){
+  .contact-layout{ grid-template-columns:1fr; }
+}
