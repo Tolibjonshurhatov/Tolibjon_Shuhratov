@@ -1,6 +1,18 @@
 /* =========================================================
    home.css — Bosh sahifa (hero)
    ========================================================= */
+.project-card_media {
+  width: 30%;
+  height: 30%;
+}
+
+.project-card_media img {
+  border-radius: 10%;
+}
+
+.project-card_desc {
+  margin-bottom: 10px;
+}
 
 .hero{
   position:relative;
